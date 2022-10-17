@@ -1,9 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello my name is Steven Eno and I am a product developer at Da Vinci Schools
 
-Things you may want to cover:
+This is my Ruby on Rails closed loop competencies app.
 
 * Ruby version
 
