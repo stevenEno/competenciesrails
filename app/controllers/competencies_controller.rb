@@ -3,7 +3,7 @@ class CompetenciesController < ApplicationController
 
   # GET /competencies or /competencies.json
   def index
-    @competencies = Competency.all
+    @competencies = Competency.order(params[:sort])
   end
 
   # GET /competencies/1 or /competencies/1.json

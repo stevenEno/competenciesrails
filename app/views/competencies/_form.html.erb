@@ -11,57 +11,47 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.text_field :name, class:"form-control", placeholder: "Competency Name" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :short_desc, class:"form-control", placeholder: "Short Description" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :long_desc, class:"form-control", placeholder: "Long Description" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :industry, class:"form-control", placeholder: "Industry" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :primary_class, class:"form-control", placeholder: "Primary Class Competency Maps To" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :secondary_class, class:"form-control", placeholder: "Secondary Class Competency Maps To" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :mastery1, class:"form-control", placeholder: "Mastery Level 1" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :mastery2, class:"form-control", placeholder: "Mastery Level 2" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.text_field :mastery3, class:"form-control", placeholder: "Mastery Level 3" %>
+  </div class="mb-3">
+
+  <div class="mb-3">
+    <%= form.text_field :owner, class:"form-control", placeholder: "Owner" %>
   </div>
 
   <div>
-    <%= form.label :short_desc, style: "display: block" %>
-    <%= form.text_field :short_desc %>
-  </div>
-
-  <div>
-    <%= form.label :long_desc, style: "display: block" %>
-    <%= form.text_field :long_desc %>
-  </div>
-
-  <div>
-    <%= form.label :industry, style: "display: block" %>
-    <%= form.text_field :industry %>
-  </div>
-
-  <div>
-    <%= form.label :primary_class, style: "display: block" %>
-    <%= form.text_field :primary_class %>
-  </div>
-
-  <div>
-    <%= form.label :secondary_class, style: "display: block" %>
-    <%= form.text_field :secondary_class %>
-  </div>
-
-  <div>
-    <%= form.label :mastery1, style: "display: block" %>
-    <%= form.text_field :mastery1 %>
-  </div>
-
-  <div>
-    <%= form.label :mastery2, style: "display: block" %>
-    <%= form.text_field :mastery2 %>
-  </div>
-
-  <div>
-    <%= form.label :mastery3, style: "display: block" %>
-    <%= form.text_field :mastery3 %>
-  </div>
-
-  <div>
-    <%= form.label :owner, style: "display: block" %>
-    <%= form.text_field :owner %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
