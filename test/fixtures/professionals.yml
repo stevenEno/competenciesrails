@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  industry: MyString
+  description: MyString
+  proj_avail: 1
+  class_eng: 1
+  student_exp: 1
+  teacher_mentor: 1
+
+two:
+  name: MyString
+  industry: MyString
+  description: MyString
+  proj_avail: 1
+  class_eng: 1
+  student_exp: 1
+  teacher_mentor: 1

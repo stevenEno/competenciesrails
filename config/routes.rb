@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :professionals
   resources :portfolios
   resources :projects
   devise_for :users
