@@ -19,19 +19,17 @@
 
     <tbody>
       <% @competencies.each do |competency| %>
-        <!--<% if competency.user == current_user %>-->
-          <tr>
-            <td><%= link_to competency.name, competency %></td>
-            <td><%= competency.short_desc %></td>
-            <td><%= competency.industry %></td>
-            <td><%= competency.primary_class %></td>
-            <td><%= competency.mastery1 %></td>
-            <td><%= competency.mastery2 %></td>
-            <td><%= competency.mastery3 %></td>
-            <td><%= competency.owner %></td>
-            <td><%= link_to "Delete", competency, data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm" %></td>
-          </tr>
-        <!--<% end %>-->
+        <tr>
+          <td><%= link_to competency.name, competency %></td>
+          <td><%= competency.short_desc %></td>
+          <td><%= competency.industry %></td>
+          <td><%= competency.primary_class %></td>
+          <td><%= competency.mastery1 %></td>
+          <td><%= competency.mastery2 %></td>
+          <td><%= competency.mastery3 %></td>
+          <td><%= competency.owner %></td>
+          <td><%= link_to "Delete", competency, data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm" %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
@@ -40,7 +38,10 @@
 
 <!--<% else %>
 
+
 <h1>Welcome to the Da Vinci Institute</h1>
 Here you will find all of the resources you need for RWL.
 
 <% end %>-->
+<!--<% if competency.user == current_user %>-->
+<!--<% end %>-->
