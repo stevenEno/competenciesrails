@@ -1,9 +1,9 @@
 class CompetenciesController < ApplicationController
   include Pundit::Authorization
 
-  before_action :set_competency, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  #before_action :set_competency, only: %i[ show edit update destroy ]
+  #before_action :authenticate_user!, except: [:index, :show]
+  #before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /competencies or /competencies.json
   def index
     @competencies = Competency.order(params[:sort])
