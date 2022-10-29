@@ -51,6 +51,10 @@
     <%= form.text_field :owner, class:"form-control", placeholder: "Owner" %>
   </div>
 
+  <div class="mb-3">
+    <%= form.number_field :user_id, id: :competency_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
   <div>
     <%= form.submit class: "btn btn-primary" %>
   </div>

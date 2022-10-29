@@ -5,31 +5,45 @@
 
   </div>
   <div class="card-body">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field form-group">
-    <% f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "email@students.davincischools.org" %>
-  </div>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="1">Professional</label>
 
-  <div class="field form-group">
-    <% f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: "Password" %>
-  </div>
+      <input type="radio" class="btn-check" name="btnradio" id="2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="2">Teacher</label>
 
-  <div class="field form-group">
-    <% f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder: "Confirm Password" %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit "Sign up", class: "btn btn-secondary" %>
-  </div>
-<% end %>
+      <input type="radio" class="btn-check" name="btnradio" id="3" autocomplete="off">
+      <label class="btn btn-outline-primary" for="3">Student</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="4" autocomplete="off">
+      <label class="btn btn-outline-primary" for="4">School Leader</label>
+    </div>
+
+    <div class="field form-group">
+      <% f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "name@email.com" %>
+    </div>
+
+    <div class="field form-group">
+      <% f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: "Password" %>
+    </div>
+
+    <div class="field form-group">
+      <% f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder: "Confirm Password" %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "Sign up", class: "btn btn-secondary" %>
+    </div>
+    <% end %>
   </div>
 </div>
 <br>

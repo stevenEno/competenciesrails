@@ -1,6 +1,9 @@
 class CompetenciesController < ApplicationController
-  before_action :set_competency, only: %i[ show edit update destroy ]
+  include Pundit::Authorization
 
+  before_action :set_competency, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /competencies or /competencies.json
   def index
     @competencies = Competency.order(params[:sort])
@@ -12,7 +15,8 @@ class CompetenciesController < ApplicationController
 
   # GET /competencies/new
   def new
-    @competency = Competency.new
+    #@competency = Competency.new
+    @competency = current_user.competencies.build
   end
 
   # GET /competencies/1/edit
@@ -21,7 +25,8 @@ class CompetenciesController < ApplicationController
 
   # POST /competencies or /competencies.json
   def create
-    @competency = Competency.new(competency_params)
+    #@competency = Competency.new(competency_params)
+    @competency = current_user.competencies.build(competency_params)
 
     respond_to do |format|
       if @competency.save
@@ -57,6 +62,11 @@ class CompetenciesController < ApplicationController
     end
   end
 
+  def correct_user
+    @competency = current_user.competencies.find_by(id: params[:id])
+    redirect_to competencies_path, notice: "Not Authorized To Edit This Competency DUDE!" if @competency.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_competency
@@ -65,6 +75,6 @@ class CompetenciesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def competency_params
-      params.require(:competency).permit(:name, :short_desc, :long_desc, :industry, :primary_class, :secondary_class, :mastery1, :mastery2, :mastery3, :owner)
+      params.require(:competency).permit(:name, :short_desc, :long_desc, :industry, :primary_class, :secondary_class, :mastery1, :mastery2, :mastery3, :owner, :user_id)
     end
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  industry: MyString
+  description: MyString
+  goal: MyString
+
+two:
+  industry: MyString
+  description: MyString
+  goal: MyString
