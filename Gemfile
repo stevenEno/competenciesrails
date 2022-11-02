@@ -47,6 +47,10 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 
 gem 'pundit', '~> 2.2'
 
+gem 'activestorage', '~> 7.0', '>= 7.0.4'
+
+gem 'aws-sdk-s3', '~> 1.117', '>= 1.117.1'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

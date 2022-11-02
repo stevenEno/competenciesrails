@@ -1,0 +1,47 @@
+<div id="<%= dom_id internship %>">
+  <p>
+    <strong>Name:</strong>
+    <%= internship.name %>
+  </p>
+
+  <p>
+    <strong>Company:</strong>
+    <%= internship.company %>
+  </p>
+
+  <p>
+    <strong>Industry:</strong>
+    <%= internship.industry %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= internship.description %>
+  </p>
+
+  <p>
+    <strong>Start date:</strong>
+    <%= internship.start_date %>
+  </p>
+
+  <p>
+    <strong>End date:</strong>
+    <%= internship.end_date %>
+  </p>
+
+  <p>
+    <strong>Application link:</strong>
+    <%= internship.application_link %>
+  </p>
+
+  <p>
+    <strong>Contact:</strong>
+    <%= internship.contact %>
+  </p>
+
+  <p>
+    <strong>Avatar:</strong>
+    <%= image_tag(internship.avatar) if internship.avatar.attached? %>
+  </p>
+
+</div>
