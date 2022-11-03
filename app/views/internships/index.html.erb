@@ -8,7 +8,6 @@
       <th><%= link_to "Industry", :sort => "industry" %></th>
       <th>Description</th>
       <th>Start Date</th>
-      <th>Contact</th>
       <th></th>
     </tr>
   </thead>
@@ -21,7 +20,6 @@
         <td><%= internship.industry %></td>
         <td><%= internship.description %></td>
         <td><%= internship.start_date %></td>
-        <td><%= internship.contact %></td>
         <td><%= link_to "Apply Now", internship.application_link, class:"btn btn-success", target: :_blank %></td>
       </tr>
     <% end %>
