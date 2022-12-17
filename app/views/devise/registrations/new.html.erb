@@ -9,36 +9,38 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-      <input type="radio" class="btn-check" name="btnradio" id="1" autocomplete="off" checked>
-      <label class="btn btn-outline-primary" for="1">Professional</label>
+      <%= f.radio_button :user_type, 1, class: "btn-check", id: "1", autocomplete: "off", checked: true %>
+      <label class="btn btn-outline-primary" for="1">Teacher</label>
 
-      <input type="radio" class="btn-check" name="btnradio" id="2" autocomplete="off">
-      <label class="btn btn-outline-primary" for="2">Teacher</label>
+      <%= f.radio_button :user_type, 2, class: "btn-check", id: "2", autocomplete: "off" %>
+      <label class="btn btn-outline-primary" for="2">Student</label>
 
-      <input type="radio" class="btn-check" name="btnradio" id="3" autocomplete="off">
-      <label class="btn btn-outline-primary" for="3">Student</label>
+      <%= f.radio_button :user_type, 3, class: "btn-check", id: "3", autocomplete: "off" %>
+      <label class="btn btn-outline-primary" for="3">Professional</label>
 
-      <input type="radio" class="btn-check" name="btnradio" id="4" autocomplete="off">
+      <%= f.radio_button :user_type, 4, class: "btn-check", id: "4", autocomplete: "off" %>
       <label class="btn btn-outline-primary" for="4">School Leader</label>
     </div>
 
     <div class="field form-group">
       <% f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "name@email.com" %>
+      <br />
     </div>
 
     <div class="field form-group">
       <% f.label :password %>
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: "Password" %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: "Password" %>
+      <% end %>
     </div>
 
     <div class="field form-group">
       <% f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder: "Confirm Password" %>
     </div>
+
     <br>
     <div class="actions">
       <%= f.submit "Sign up", class: "btn btn-secondary" %>

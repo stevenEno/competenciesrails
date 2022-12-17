@@ -13,5 +13,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many :competencies
+  attribute :user_type, type: Integer
 end

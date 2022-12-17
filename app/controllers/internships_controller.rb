@@ -3,7 +3,7 @@ class InternshipsController < ApplicationController
 
   # GET /internships or /internships.json
   def index
-    @internships = Internship.all
+    @internships = Internship.order(params[:sort])
   end
 
   # GET /internships/1 or /internships/1.json
