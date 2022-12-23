@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
-  #get 'search/index'
-  get '/search' => 'search#index', :as => 'search'
   resources :internships
   resources :professionals
   resources :portfolios
   resources :projects
   devise_for :users, controllers: { registrations: "registrations" }
   resources :competencies
-  #get 'home/index'
-  get 'home/about'
+
   #root 'home#index'
   root 'home#homepage'
+  #get 'search/index'
+  get '/search' => 'search#index', :as => 'search'
+  get 'home/index'
+  #get 'home/about'
+  #get 'home/contact'
+  #get 'home/help'
+  get '/help', to: 'static_pages#help', as: 'help'
+  get '/about', to: 'static_pages#about'
+  get '/contact', to: 'static_pages#contact'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
