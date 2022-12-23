@@ -2,6 +2,8 @@ require_relative "boot"
 
 require "rails/all"
 
+require_relative "../app/services/onet_web_service"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -18,5 +20,12 @@ module InstituteApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.after_initialize do
+      # Initialize the OnetWebService class with the necessary credentials
+      username = "davincischools_insti"
+      password = "8557xzm"
+      $onet_web_service = OnetWebService.new(username, password)
+    end
   end
 end
