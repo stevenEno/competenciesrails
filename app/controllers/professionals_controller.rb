@@ -13,6 +13,7 @@ class ProfessionalsController < ApplicationController
   # GET /professionals/new
   def new
     @professional = Professional.new
+    @users = User.all
   end
 
   # GET /professionals/1/edit
@@ -65,6 +66,7 @@ class ProfessionalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def professional_params
-      params.require(:professional).permit(:name, :industry, :description, :proj_avail, :class_eng, :student_exp, :teacher_mentor)
+      params.require(:professional).permit(:name, :organization, :occupation, :user_id, :email, :field_trip, :class_speaker, :lunch, :job_shadow, :career_fair,
+                                            :mentorship, :proj_pitch, :proj_consult, :proj_collab, :student_wbl, :externship, :description, :linked_in )
     end
 end

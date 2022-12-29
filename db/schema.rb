@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_27_233637) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_29_082026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -82,15 +82,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_27_233637) do
 
   create_table "professionals", force: :cascade do |t|
     t.string "name"
-    t.string "industry"
-    t.string "description"
-    t.integer "proj_avail"
-    t.integer "class_eng"
-    t.integer "student_exp"
-    t.integer "teacher_mentor"
+    t.string "organization"
+    t.string "occupation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.string "email"
+    t.boolean "field_trip"
+    t.boolean "class_speaker"
+    t.boolean "lunch"
+    t.boolean "job_shadow"
+    t.boolean "career_fair"
+    t.boolean "mentorship"
+    t.boolean "proj_pitch"
+    t.boolean "proj_consult"
+    t.boolean "proj_collab"
+    t.boolean "student_wbl"
+    t.boolean "externship"
+    t.string "description"
+    t.string "linked_in"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_professionals_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -120,4 +131,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_27_233637) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "professionals", "users"
 end
