@@ -55,8 +55,10 @@ gem 'aws-sdk-s3', '~> 1.117', '>= 1.117.1'
 
 gem 'faraday', '~> 2.6'
 
+gem 'bootstrap', '~> 5.2.3'
+
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"

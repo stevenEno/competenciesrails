@@ -1,10 +1,11 @@
 class User < ApplicationRecord
   enum role: {
     basic: 0,
-    professional: 1,
-    teacher: 2,
-    student: 3,
-    admin: 4
+    teacher: 1,
+    student: 2,
+    professional: 3,
+    school_lead: 4,
+    admin: 5
   }
 
 
@@ -13,5 +14,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  attribute :user_type, type: Integer
+  attribute :user_type, type: String
+  attribute :name, type: String
+
+  has_many :professionals
 end

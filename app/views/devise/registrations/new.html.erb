@@ -9,17 +9,23 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-      <%= f.radio_button :user_type, 1, class: "btn-check", id: "1", autocomplete: "off", checked: true %>
-      <label class="btn btn-outline-primary" for="1">Teacher</label>
+      <%= f.radio_button :user_type, "teacher", class: "btn-check", id: "teacher", autocomplete: "off", checked: true %>
+      <label class="btn btn-outline-primary" for="teacher">Teacher</label>
 
-      <%= f.radio_button :user_type, 2, class: "btn-check", id: "2", autocomplete: "off" %>
-      <label class="btn btn-outline-primary" for="2">Student</label>
+      <%= f.radio_button :user_type, "student", class: "btn-check", id: "student", autocomplete: "off" %>
+      <label class="btn btn-outline-primary" for="student">Student</label>
 
-      <%= f.radio_button :user_type, 3, class: "btn-check", id: "3", autocomplete: "off" %>
-      <label class="btn btn-outline-primary" for="3">Professional</label>
+      <%= f.radio_button :user_type, "professional", class: "btn-check", id: "professional", autocomplete: "off" %>
+      <label class="btn btn-outline-primary" for="professional">Professional</label>
 
-      <%= f.radio_button :user_type, 4, class: "btn-check", id: "4", autocomplete: "off" %>
-      <label class="btn btn-outline-primary" for="4">School Leader</label>
+      <%= f.radio_button :user_type, "school_lead", class: "btn-check", id: "school_lead", autocomplete: "off" %>
+      <label class="btn btn-outline-primary" for="school_lead">School Leader</label>
+    </div>
+
+    <div class="field form-group">
+      <% f.label :name %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control", placeholder: "User Full Name" %>
+      <br />
     </div>
 
     <div class="field form-group">
