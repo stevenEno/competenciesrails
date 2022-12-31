@@ -28,8 +28,8 @@
               Account
             </a>
             <ul class="dropdown-menu">
-              <% if current_user.try(:user_type) == 1 %>
-                <li><a class="dropdown-item" href="#">Professional Relationships</a></li>
+              <% if current_user.try(:user_type) == "teacher" %>
+                <li><%= link_to "Professional Relationships", home_index_path, class:"dropdown-item" %></li>
                 <li><a class="dropdown-item" href="#">Projects Builder</a></li>
               <% else %>
                 <li><a class="dropdown-item" href="#">Portfolio</a></li>

@@ -1,2 +1,8 @@
-<h1>Welcome to the Da Vinci Schools Institute</h1>
-<p>Demo for the competency driven closed loop platform</p>
+<h1>Welcome, <%= @user.name %></h1>
+
+<h2>Your professional partners</h2>
+<ul>
+  <% @professionals.each do |professional| %>
+    <li><%= professional.name %></li>
+  <% end %>
+</ul>
