@@ -1,7 +1,7 @@
 <div id="<%= dom_id portfolio %>">
   <p>
-    <strong>Industry:</strong>
-    <%= portfolio.industry %>
+    <strong>Ikigai:</strong>
+    <%= portfolio.ikigai %>
   </p>
 
   <p>
@@ -10,8 +10,12 @@
   </p>
 
   <p>
-    <strong>Goal:</strong>
-    <%= portfolio.goal %>
+    <strong>post_type:</strong>
+    <%= portfolio.post_type %>
+  </p>
+
+  <p>
+    <%= image_tag(portfolio.avatar) if portfolio.avatar.attached? %>
   </p>
 
 </div>

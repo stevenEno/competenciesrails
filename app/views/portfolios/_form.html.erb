@@ -11,22 +11,53 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :industry, style: "display: block" %>
-    <%= form.text_field :industry %>
+  <div class="row mb-3">
+    <label for="inputIkigai" class="col-sm-2 col-form-label">Current Ikigai</label>
+    <div class="col-sm-10">
+      <%= form.text_field :ikigai, class:"form-control", id:"inputIkigai" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+  <div class="row mb-3">
+    <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <%= form.text_area :description, class:"form-control", rows:3, placeholder: "Show off your excitement about your progress in your build", id: "inputDescription" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :goal, style: "display: block" %>
-    <%= form.text_field :goal %>
+  <fieldset class="row mb-3">
+    <legend class="col-form-label col-sm-2 pt-0">Building Flywheel Step</legend>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <%= form.radio_button :post_type, "ikigai_connection", class:"form-check-input", checked: true  %>
+        <%= form.label "Ikigai Connection", class: "form-check-label" %>
+      </div>
+      <div class="form-check">
+        <%= form.radio_button :post_type, "skills", class:"form-check-input" %>
+        <%= form.label "Accumulate skills/results", class: "form-check-label" %>
+      </div>
+      <div class="form-check">
+        <%= form.radio_button :post_type, "s_curve", class:"form-check-input", disabled: true  %>
+        <%= form.label "Stacking S-curves (Mentor or Approach change)", class: "form-check-label" %>
+      </div>
+      <div class="form-check">
+        <%= form.radio_button :post_type, "next", class:"form-check-input", disabled:true  %>
+        <%= form.label "What can I build next? (Project finish)", class: "form-check-label" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="row mb-3">
+    <%= form.label "Picture of your amazing work", style: "display: block" %>
+    <%= form.file_field :avatar, class: "form-control-file" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.number_field :user_id, id: :portfolio_user_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
+
+  <br>
+  <button type="submit" class="btn btn-primary">Spin Your Building Flywheel</button>
+  <br>
+
 <% end %>

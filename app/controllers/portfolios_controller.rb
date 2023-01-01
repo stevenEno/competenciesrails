@@ -13,6 +13,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios/new
   def new
     @portfolio = Portfolio.new
+    @users = User.all
   end
 
   # GET /portfolios/1/edit
@@ -65,6 +66,6 @@ class PortfoliosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def portfolio_params
-      params.require(:portfolio).permit(:industry, :description, :goal)
+      params.require(:portfolio).permit(:ikigai, :description, :next_build, :user_id, :post_type, :avatar)
     end
 end

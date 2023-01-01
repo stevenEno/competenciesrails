@@ -18,7 +18,7 @@ class User < ApplicationRecord
   attribute :name, type: String
 
   has_many :professionals
-  #has_many :portfolios
+  has_many :portfolios
   #has_many :projects
   #has_many :competencies
 end
