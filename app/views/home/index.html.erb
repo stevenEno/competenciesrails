@@ -1,8 +1,44 @@
 <h1>Welcome, <%= @user.name %></h1>
 
+<h2>Tier 3 professionals</h2>
+<ul>
+  <% @professionals.each do |professional| %>
+    <% if professional.relationship_points > 66 %>
+      <li><%= professional.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h2>Teir 2 professionals</h2>
+<ul>
+  <% @professionals.each do |professional| %>
+    <% if professional.relationship_points > 33 && professional.relationship_points <= 66 %>
+      <li><%= professional.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h2>Teir 1 professionals</h2>
+<ul>
+  <% @professionals.each do |professional| %>
+    <% if professional.relationship_points <= 33 %>
+      <li><%= professional.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+
 <h2>Your professional partners</h2>
 <ul>
   <% @professionals.each do |professional| %>
-    <li><%= professional.name %></li>
+    <li>
+        <%= professional.name %> - 
+        <%= professional.relationship_points %>
+        <%= form_for professional, url: professional_modify_relationship_path(professional), method: :patch do |f| %>
+            <%= f.number_field :relationship_points, min: 0 %>
+            <%= f.submit "Update Relationship Level" %>
+            <label for="customRange3" class="form-label">Example range</label>
+            <input type="range" class="form-range" min="1" max="100" step="5" id="customRange3">
+        <% end %>
+    </li>
   <% end %>
 </ul>

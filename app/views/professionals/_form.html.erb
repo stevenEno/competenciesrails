@@ -33,6 +33,11 @@
     <%= form.text_field :organization, class:"form-control", id:"basic-org", placeholder: "Neuralink",aria_describedby:"basic-addon4" %>
   </div>
 
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon5">Job Title</span>
+    <%= form.text_field :occupation, class:"form-control", id:"basic-job", placeholder: "Synapse Engineer",aria_describedby:"basic-addon5" %>
+  </div>
+
   <div class="input-group">
     <span class="input-group-text">Job Description</span>
     <%= form.text_area :description, class:"form-control", rows:3, aria_label:"Job description", placeholder: "Describe your job to inspire a high school student" %>
@@ -141,6 +146,10 @@
         </div>
       </div>
     </div><br><br>
+
+    <div class="mb-3">
+      <%= form.number_field :relationship_points, class:"form-control", value: 1, type: :hidden %>
+    </div>
 
     <%= form.select :user_id, options_from_collection_for_select(@users, "id", "name") %>
     <br><br>
