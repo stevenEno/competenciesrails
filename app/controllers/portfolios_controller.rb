@@ -3,11 +3,16 @@ class PortfoliosController < ApplicationController
 
   # GET /portfolios or /portfolios.json
   def index
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.order(created_at: :desc)
   end
 
   # GET /portfolios/1 or /portfolios/1.json
   def show
+  end
+
+  def user_posts
+    @user = User.find(params[:user_id])
+    @portfolios = @user.posts
   end
 
   # GET /portfolios/new

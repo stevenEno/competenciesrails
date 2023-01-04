@@ -19,6 +19,8 @@ class ProfessionalsController < ApplicationController
 
   # GET /professionals/1/edit
   def edit
+    @professional = Professional.find(params[:id])
+    @users = User.all
   end
 
   # PATCH /professionals/modify_relationship
@@ -78,6 +80,6 @@ class ProfessionalsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def professional_params
       params.require(:professional).permit(:name, :organization, :occupation, :user_id, :email, :field_trip, :class_speaker, :lunch, :job_shadow, :career_fair,
-                                            :mentorship, :proj_pitch, :proj_consult, :proj_collab, :student_wbl, :externship, :description, :linked_in, :relationship_points )
+                                            :mentorship, :proj_pitch, :proj_consult, :proj_collab, :student_wbl, :externship, :description, :linked_in, :relationship_points, :avatar )
     end
 end

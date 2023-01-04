@@ -15,7 +15,7 @@
   </p>
 
   <p>
-    <%= image_tag(portfolio.avatar) if portfolio.avatar.attached? %>
+    <%= image_tag portfolio.avatar.variant(resize_to_limit: [300, 400]) if portfolio.avatar.attached? %>
   </p>
 
 </div>

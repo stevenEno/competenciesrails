@@ -2,13 +2,21 @@
 
 <h1>Building Flywheels</h1>
 
-<div id="portfolios">
-  <% @portfolios.each do |portfolio| %>
-    <%= render portfolio %>
-    <p>
-      <%= link_to "Show this portfolio", portfolio %>
-    </p>
-  <% end %>
-</div>
+<%= content_tag :div, class: "container mt-5" do %>
+  <div class="row">
+    <% @portfolios.each do |portfolio| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <%= image_tag portfolio.avatar, class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= portfolio.ikigai %></h5>
+            <p class="card-text"><%= portfolio.description %></p>
+            <p class="card-text"><small class="text-muted">Posted <%= time_ago_in_words(portfolio.created_at) %> ago</small></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <%= link_to "New portfolio", new_portfolio_path %>

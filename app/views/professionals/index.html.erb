@@ -2,13 +2,76 @@
 
 <h1>Professionals</h1>
 
-<div id="professionals">
-  <% @professionals.each do |professional| %>
-    <%= render professional %>
-    <p>
-      <%= link_to "Show this professional", professional %>
-    </p>
-  <% end %>
-</div>
+<%= content_tag :div, class: "container mt-5" do %>
+  <div class="row">
+    <% @professionals.each do |professional| %>
+      <div class="col-md-4 mb-4">
+        <%= link_to professional do %>
+          <div class="card">
+            <% if !professional.avatar.attached? %>
+              <%= image_tag "dv-schools-logo.jpg", class: "card-img-top" %>
+            <% else %>
+              <%= image_tag professional.avatar, class: "card-img-top" %>
+            <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= professional.name %></h5>
+                <p class="card-text"><b><%= professional.occupation %></b></p>
+                <p class="card-text"><%= professional.description %></p>
+                <p class="card-text"><b>Availability</b></p>
+                <p class="card-text">
+                  <ul>
+                    <% case professional.field_trip %>
+                      <% when true %>
+                        <li>Field Trip</li>
+                      <% end %>
+                    <% case professional.class_speaker %>
+                      <% when true %>
+                        <li>Class Speaker</li>
+                      <% end %>
+                    <% case professional.lunch %>
+                      <% when true %>
+                        <li>Power Lunches</li>
+                      <% end %>
+                    <% case professional.job_shadow %>
+                      <% when true %>
+                        <li>Job Shadow</li>
+                      <% end %>
+                    <% case professional.career_fair %>
+                      <% when true %>
+                        <li>Career Fair</li>
+                      <% end %>
+                    <% case professional.mentorship %>
+                      <% when true %>
+                        <li>Mentorship</li>
+                      <% end %>
+                    <% case professional.proj_pitch %>
+                      <% when true %>
+                        <li>Project Pitches</li>
+                      <% end %>
+                    <% case professional.proj_consult %>
+                      <% when true %>
+                        <li>Project Consultations</li>
+                      <% end %>
+                    <% case professional.proj_collab %>
+                      <% when true %>
+                        <li>Project Collaborations</li>
+                      <% end %>
+                      <% case professional.student_wbl %>
+                      <% when true %>
+                        <li>Work Based Learning for Students</li>
+                      <% end %>
+                    <% case professional.externship %>
+                      <% when true %>
+                        <li>Teacher Externship</li>
+                      <% end %>
+                  </ul>
+                </p>
+              </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <%= link_to "New professional", new_professional_path %>

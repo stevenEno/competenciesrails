@@ -43,6 +43,11 @@
     <%= form.text_area :description, class:"form-control", rows:3, aria_label:"Job description", placeholder: "Describe your job to inspire a high school student" %>
   </div><br>
 
+  <div class="row mb-3">
+    <%= form.label "Profile Picture", style: "display: block" %>
+    <%= form.file_field :avatar, class: "form-control-file" %>
+  </div>
+
   <div class="container text-center">
     <p>Select your availability for possible partnership opportunities below</p>
     <div class="row justify-content-around">
