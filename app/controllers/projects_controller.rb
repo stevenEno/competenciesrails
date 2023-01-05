@@ -13,10 +13,13 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    @users = User.all
   end
 
   # GET /projects/1/edit
   def edit
+    @project = Project.find(params[:id])
+    @users = User.all
   end
 
   # POST /projects or /projects.json
@@ -65,6 +68,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :description, :hook, :product, :primary_class, :secondary_class)
+      params.require(:project).permit(:name, :description, :hook, :product, :industry, :constraints, :user_id, :s_curve, :avatar)
     end
 end

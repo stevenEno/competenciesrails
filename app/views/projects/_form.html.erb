@@ -11,37 +11,57 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="row mb-3">
+    <label for="inputName" class="col-sm-2 col-form-label">Project Name</label>
+    <div class="col-sm-10">
+      <%= form.text_field :name, class:"form-control", id:"inputName" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+  <div class="row mb-3">
+    <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <%= form.text_area :description, class:"form-control", rows:3, placeholder: "Project Elevator Pitch", id: "inputDescription" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :hook, style: "display: block" %>
-    <%= form.text_field :hook %>
+  <fieldset class="row mb-3">
+    <legend class="col-form-label col-sm-2 pt-0">Innovation Skill</legend>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <%= form.radio_button :s_curve, "ikigai_connection", class:"form-check-input", checked: true  %>
+        <%= form.label "Empathetic Perspective", class: "form-check-label" %>
+      </div>
+      <div class="form-check">
+        <%= form.radio_button :s_curve, "skills", class:"form-check-input" %>
+        <%= form.label "Uncovering Demand", class: "form-check-label" %>
+      </div>
+      <div class="form-check">
+        <%= form.radio_button :s_curve, "s_curve", class:"form-check-input", disabled: true  %>
+        <%= form.label "Causal Structures", class: "form-check-label" %>
+      </div>
+      <div class="form-check">
+        <%= form.radio_button :s_curve, "s_curve", class:"form-check-input", disabled: true  %>
+        <%= form.label "Prototyping to Learn", class: "form-check-label" %>
+      </div>
+      <div class="form-check">
+        <%= form.radio_button :s_curve, "next", class:"form-check-input", disabled:true  %>
+        <%= form.label "Understanding Tradeoffs", class: "form-check-label" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="row mb-3">
+    <%= form.label "Picture of sample deliverable", style: "display: block" %>
+    <%= form.file_field :avatar, class: "form-control-file" %>
   </div>
 
-  <div>
-    <%= form.label :product, style: "display: block" %>
-    <%= form.text_field :product %>
+  <div class="mb-3">
+    <%= form.number_field :user_id, id: :project_user_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
 
-  <div>
-    <%= form.label :primary_class, style: "display: block" %>
-    <%= form.text_field :primary_class %>
-  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Launch Project</button>
+  <br>
 
-  <div>
-    <%= form.label :secondary_class, style: "display: block" %>
-    <%= form.text_field :secondary_class %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>

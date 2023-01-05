@@ -19,6 +19,5 @@ class User < ApplicationRecord
 
   has_many :professionals
   has_many :portfolios
-  #has_many :projects
-  #has_many :competencies
+  has_many :projects
 end

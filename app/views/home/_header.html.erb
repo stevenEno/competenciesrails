@@ -30,7 +30,7 @@
             <ul class="dropdown-menu">
               <% if current_user.try(:user_type) == "teacher" %>
                 <li><%= link_to "Professional Relationships", home_index_path, class:"dropdown-item" %></li>
-                <li><a class="dropdown-item" href="#">Projects Builder</a></li>
+                <li><%= link_to "DVS Celebrations", help_path, class:"dropdown-item" %></li>
               <% else %>
                 <li><a class="dropdown-item" href="#">Portfolio</a></li>
               <% end %>
