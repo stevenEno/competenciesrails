@@ -55,12 +55,16 @@ gem 'aws-sdk-s3', '~> 1.117', '>= 1.117.1'
 
 gem 'faraday', '~> 2.6'
 
-gem 'slack-ruby-client', '~> 2.0'
+# gem 'bootstrap', '~> 5.2.3'
 
-gem 'bootstrap', '~> 5.2.3'
+# gem 'slack-ruby-client', '~> 2.0'
 
 # Use Sass to process CSS
 gem "sassc-rails"
+
+gem 'autoprefixer-rails', '~> 10.4', '>= 10.4.7.0'
+
+gem 'bootstrap-sass', '~> 3.4.1'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
