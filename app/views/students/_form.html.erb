@@ -1,0 +1,57 @@
+<%= form_with(model: student) do |form| %>
+  <% if student.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% student.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :ikigai, style: "display: block" %>
+    <%= form.text_field :ikigai %>
+  </div>
+
+  <div>
+    <%= form.label :interest_1, style: "display: block" %>
+    <%= form.text_field :interest_1 %>
+  </div>
+
+  <div>
+    <%= form.label :interest_2, style: "display: block" %>
+    <%= form.text_field :interest_2 %>
+  </div>
+
+  <div>
+    <%= form.label :interest_3, style: "display: block" %>
+    <%= form.text_field :interest_3 %>
+  </div>
+
+  <div>
+    <%= form.label :interest_4, style: "display: block" %>
+    <%= form.text_field :interest_4 %>
+  </div>
+
+  <div>
+    <%= form.label :interest_5, style: "display: block" %>
+    <%= form.text_field :interest_5 %>
+  </div>
+
+  <div>
+    <%= form.label :birthday, style: "display: block" %>
+    <%= form.date_field :birthday %>
+  </div>
+
+  <div>
+    <%= form.label :career_goal, style: "display: block" %>
+    <%= form.text_field :career_goal %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
