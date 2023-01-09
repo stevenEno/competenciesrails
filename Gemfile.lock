@@ -291,9 +291,9 @@ DEPENDENCIES
   puma (~> 5.0)
   pundit (~> 2.2)
   rails (~> 7.0.4)
-  sassc-rails
+  sassc-rails (>= 2.1.2)
   selenium-webdriver
-  sprockets-rails
+  sprockets-rails (= 3.4.2)
   stimulus-rails
   turbo-rails
   tzinfo-data

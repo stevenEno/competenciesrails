@@ -9,7 +9,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem "rails", "~> 7.0.4"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem "sprockets-rails", "3.4.2"
 
 # Use mysql as the database for Active Record
 #gem "mysql2", "~> 0.5"
@@ -62,11 +62,10 @@ gem 'jquery-rails'
 # gem 'slack-ruby-client', '~> 2.0'
 
 # Use Sass to process CSS
-gem "sassc-rails"
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.2'
 
 gem 'autoprefixer-rails', '~> 10.4', '>= 10.4.7.0'
-
-gem 'bootstrap-sass', '~> 3.4.1'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
