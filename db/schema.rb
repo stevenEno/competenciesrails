@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_09_063140) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_09_093756) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -105,6 +105,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_063140) do
     t.string "linked_in"
     t.bigint "user_id"
     t.integer "relationship_points"
+    t.string "skill_1"
+    t.string "skill_2"
+    t.string "skill_3"
+    t.string "skill_4"
+    t.string "skill_5"
+    t.integer "rating"
+    t.boolean "is_currently_available"
     t.index ["user_id"], name: "index_professionals_on_user_id"
   end
 

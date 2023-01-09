@@ -7,7 +7,11 @@
     <% @professionals.each do |professional| %>
       <div class="col-md-4 mb-4">
         <%= link_to professional do %>
-          <div class="card">
+          <% if professional.is_currently_available %>
+            <div class="card text-bg-success mb-3">
+          <% else %>
+            <div class="card text-bg-secondary mb-3">
+          <% end %>
             <% if !professional.avatar.attached? %>
               <%= image_tag "dv-schools-logo.jpg", class: "card-img-top" %>
             <% else %>
@@ -20,50 +24,87 @@
                 <p class="card-text"><b>Availability</b></p>
                 <p class="card-text">
                   <ul>
+                    <% counter = 0 %>
                     <% case professional.field_trip %>
                       <% when true %>
-                        <li>Field Trip</li>
+                        <% if counter < 2 %>
+                          <li>Field Trip</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
                     <% case professional.class_speaker %>
                       <% when true %>
-                        <li>Class Speaker</li>
+                        <% if counter < 2 %>
+                          <li>Class Speaker</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
                     <% case professional.lunch %>
                       <% when true %>
-                        <li>Power Lunches</li>
+                        <% if counter < 2 %>
+                          <li>Power Lunches</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
                     <% case professional.job_shadow %>
                       <% when true %>
-                        <li>Job Shadow</li>
+                        <% if counter < 2 %>
+                          <li>Job Shadow</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
                     <% case professional.career_fair %>
                       <% when true %>
-                        <li>Career Fair</li>
+                        <% if counter < 2 %>
+                          <li>Career Fair</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
                     <% case professional.mentorship %>
                       <% when true %>
-                        <li>Mentorship</li>
+                        <% if counter < 2 %>
+                          <li>Mentorship</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
                     <% case professional.proj_pitch %>
                       <% when true %>
-                        <li>Project Pitches</li>
+                        <% if counter < 2 %>
+                          <li>Project Pitches</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
                     <% case professional.proj_consult %>
                       <% when true %>
-                        <li>Project Consultations</li>
+                        <% if counter < 2 %>
+                          <li>Project Consultations</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
                     <% case professional.proj_collab %>
                       <% when true %>
-                        <li>Project Collaborations</li>
+                        <% if counter < 2 %>
+                          <li>Project Collaborations</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
-                      <% case professional.student_wbl %>
+                    <% case professional.student_wbl %>
                       <% when true %>
-                        <li>Work Based Learning for Students</li>
+                        <% if counter < 2 %>
+                          <li>Work Based Learning</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
                     <% case professional.externship %>
                       <% when true %>
-                        <li>Teacher Externship</li>
+                        <% if counter < 2 %>
+                          <li>Teacher Externship</li>
+                          <% counter += 1 %>
+                        <% end %>
                       <% end %>
+                    <% if counter == 2 %>
+                      <li>And many more. Click card for more details.</li>
+                    <% end %>
                   </ul>
                 </p>
               </div>
@@ -74,4 +115,4 @@
   </div>
 <% end %>
 
-<%= link_to "New professional", new_professional_path %>
+<%= link_to "New Professional Partner", new_professional_path, class:"btn btn-success" %>

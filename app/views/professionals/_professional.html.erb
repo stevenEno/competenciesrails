@@ -1,37 +1,86 @@
 <div id="<%= dom_id professional %>">
-  <p>
-    <strong>Name:</strong>
-    <%= professional.name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= professional.email %>
-  </p>
-
-  <p>
-    <strong>Organization:</strong>
-    <%= professional.organization %>
-  </p>
-
-  <p>
-    <strong>Occupation:</strong>
-    <%= professional.occupation %>
-  </p>
-
-  <p>
-    <strong>LinkedIn:</strong>
-    <%= professional.linked_in %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= professional.description %>
-  </p>
-
-  <p>
-    <strong>Class Speaker Availability:</strong>
-    <%= professional.class_speaker %>
-  </p>
-
+  <div class="card">
+    <% if !professional.avatar.attached? %>
+      <%= image_tag "dv-schools-logo.jpg", class: "card-img-top" %>
+    <% else %>
+      <%= image_tag professional.avatar, class: "card-img-top" %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= professional.name %></h5>
+      <p class="card-text"><b><%= professional.occupation %></b></p>
+      <p class="card-text"><%= professional.description %></p>
+      <p class="card-text"><b>Availability</b></p>
+      <p class="card-text">
+        <ul>
+          <% case professional.field_trip %>
+            <% when true %>
+              <li>Field Trip</li>
+            <% end %>
+          <% case professional.class_speaker %>
+            <% when true %>
+              <li>Class Speaker</li>
+            <% end %>
+          <% case professional.lunch %>
+            <% when true %>
+              <li>Power Lunches</li>
+            <% end %>
+          <% case professional.job_shadow %>
+            <% when true %>
+              <li>Job Shadow</li>
+            <% end %>
+          <% case professional.career_fair %>
+            <% when true %>
+              <li>Career Fair</li>
+            <% end %>
+          <% case professional.mentorship %>
+            <% when true %>
+              <li>Mentorship</li>
+            <% end %>
+          <% case professional.proj_pitch %>
+            <% when true %>
+              <li>Project Pitches</li>
+            <% end %>
+          <% case professional.proj_consult %>
+            <% when true %>
+              <li>Project Consultations</li>
+            <% end %>
+          <% case professional.proj_collab %>
+            <% when true %>
+              <li>Project Collaborations</li>
+            <% end %>
+            <% case professional.student_wbl %>
+            <% when true %>
+              <li>Work Based Learning for Students</li>
+            <% end %>
+          <% case professional.externship %>
+            <% when true %>
+              <li>Teacher Externship</li>
+            <% end %>
+        </ul>
+      </p>
+      <p class="card-text"><b>Top Skills to Share with Students</b></p>
+      <p class="card-text">
+        <ul>
+          <% if @professional.skill_1.present? %>
+            <li>Skill: <%= @professional.skill_1 %></li>
+          <% end %>
+          <% if @professional.skill_2.present? %>
+            <li>Skill: <%= @professional.skill_2 %></li>
+          <% end %>
+          <% if @professional.skill_3.present? %>
+            <li>Skill: <%= @professional.skill_3 %></li>
+          <% end %>
+          <% if @professional.skill_4.present? %>
+            <li>Skill: <%= @professional.skill_4 %></li>
+          <% end %>
+          <% if @professional.skill_5.present? %>
+            <li>Skill: <%= @professional.skill_5 %></li>
+          <% end %>
+        </ul>
+      <p class="card-text"><b>Teacher Rating</b></p>
+        <% if @professional.rating.present? %>
+        <% else %>
+          <p>Not yet ranked</p>
+        <% end %>
+    </div>
 </div>
