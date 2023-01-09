@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/search' => 'search#index', :as => 'search'
   get 'home/index'
   patch "professionals/:id/modify_relationship", to: "professionals#modify_relationship", as: :professional_modify_relationship
+  get "professionals/:id/connect_email", to: "professionals#connect_email", as: :professional_connect_email
   #get 'home/about'
   #get 'home/contact'
   #get 'home/help'

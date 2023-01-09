@@ -11,6 +11,17 @@ class ProfessionalsController < ApplicationController
   def show
   end
 
+  # Email
+  def connect_email
+    @professional = Professional.find(params[:id])
+    @user = current_user
+    ConnectMailer.connect_email(user: @user, professional: @professional).deliver_now
+    respond_to do |format|
+      format.html { redirect_to professional_url(@professional), notice: 'Email sent' }
+      format.js { render :nothing => true }
+    end
+  end
+
   # GET /professionals/new
   def new
     @professional = Professional.new
