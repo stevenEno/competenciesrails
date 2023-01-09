@@ -55,6 +55,8 @@ gem 'aws-sdk-s3', '~> 1.117', '>= 1.117.1'
 
 gem 'faraday', '~> 2.6'
 
+gem 'jquery-rails'
+
 # gem 'bootstrap', '~> 5.2.3'
 
 # gem 'slack-ruby-client', '~> 2.0'
