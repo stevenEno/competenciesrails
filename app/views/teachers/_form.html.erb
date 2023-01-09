@@ -1,0 +1,107 @@
+<%= form_with(model: teacher) do |form| %>
+  <% if teacher.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+        <% teacher.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :ikigai, style: "display: block" %>
+    <%= form.text_field :ikigai %>
+  </div>
+
+  <div>
+    <%= form.label :interest_1, style: "display: block" %>
+    <%= form.text_field :interest_1 %>
+  </div>
+
+  <div>
+    <%= form.label :interest_2, style: "display: block" %>
+    <%= form.text_field :interest_2 %>
+  </div>
+
+  <div>
+    <%= form.label :interest_3, style: "display: block" %>
+    <%= form.text_field :interest_3 %>
+  </div>
+
+  <div>
+    <%= form.label :interest_4, style: "display: block" %>
+    <%= form.text_field :interest_4 %>
+  </div>
+
+  <div>
+    <%= form.label :interest_5, style: "display: block" %>
+    <%= form.text_field :interest_5 %>
+  </div>
+
+  <div>
+    <%= form.label :birthday, style: "display: block" %>
+    <%= form.date_field :birthday %>
+  </div>
+
+  <div>
+    <%= form.label :is_CTE, style: "display: block" %>
+    <%= form.check_box :is_CTE %>
+  </div>
+
+  <div>
+    <%= form.label :alma_mater, style: "display: block" %>
+    <%= form.text_field :alma_mater %>
+  </div>
+
+  <div>
+    <%= form.label :eks_1, style: "display: block" %>
+    <%= form.text_field :eks_1 %>
+  </div>
+
+  <div>
+    <%= form.label :eks_2, style: "display: block" %>
+    <%= form.text_field :eks_2 %>
+  </div>
+
+  <div>
+    <%= form.label :eks_3, style: "display: block" %>
+    <%= form.text_field :eks_3 %>
+  </div>
+
+  <div>
+    <%= form.label :eks_4, style: "display: block" %>
+    <%= form.text_field :eks_4 %>
+  </div>
+
+  <div>
+    <%= form.label :eks_5, style: "display: block" %>
+    <%= form.text_field :eks_5 %>
+  </div>
+
+  <div>
+    <%= form.label :eks_6, style: "display: block" %>
+    <%= form.text_field :eks_6 %>
+  </div>
+
+  <div>
+    <%= form.label :eks_7, style: "display: block" %>
+    <%= form.text_field :eks_7 %>
+  </div>
+
+  <div>
+    <%= form.label :eks_8, style: "display: block" %>
+    <%= form.text_field :eks_8 %>
+  </div>
+
+  <div>
+    <%= form.label :eks_9, style: "display: block" %>
+    <%= form.text_field :eks_9 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

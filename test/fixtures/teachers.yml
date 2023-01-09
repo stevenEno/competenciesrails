@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ikigai: MyString
+  interest_1: MyString
+  interest_2: MyString
+  interest_3: MyString
+  interest_4: MyString
+  interest_5: MyString
+  birthday: 2023-01-09
+  is_CTE: false
+  alma_mater: MyString
+  eks_1: MyString
+  eks_2: MyString
+  eks_3: MyString
+  eks_4: MyString
+  eks_5: MyString
+  eks_6: MyString
+  eks_7: MyString
+  eks_8: MyString
+  eks_9: MyString
+
+two:
+  ikigai: MyString
+  interest_1: MyString
+  interest_2: MyString
+  interest_3: MyString
+  interest_4: MyString
+  interest_5: MyString
+  birthday: 2023-01-09
+  is_CTE: false
+  alma_mater: MyString
+  eks_1: MyString
+  eks_2: MyString
+  eks_3: MyString
+  eks_4: MyString
+  eks_5: MyString
+  eks_6: MyString
+  eks_7: MyString
+  eks_8: MyString
+  eks_9: MyString
