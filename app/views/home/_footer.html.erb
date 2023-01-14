@@ -1,12 +1,21 @@
-<footer class="footer">
-  <small>
-    <p>Project Leo by <%= link_to "Da Vinci Schools Institute", about_path %></p>
-    <p>Copyright &copy; <%= Time.now.year %> <a href = "https://www.davincischools.org/">Da Vinci Schools</a></p>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About Us", about_path, class:"nav-link" %></li>
-      <li><%= link_to "Contact", contact_path, class:"nav-link" %></li>
-      <li><%= link_to "Help", help_path, class:"nav-link" %></li>
-  </nav>
+<footer class="bg-dark text-white py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>Copyright &copy; <%= Time.now.year %> <%= link_to "Da Vinci Schools", about_path, class:"nav-link" %></p>
+      </div>
+      <div class="col-md-6 text-right">
+        <a href="#" class="text-white">Privacy Policy</a>
+      </div>
+      <div class="col-md-6 text-right">
+        <%= link_to "About Us", about_path, class:"nav-link" %>
+      </div>
+      <div class="col-md-6 text-right">
+        <%= link_to "Contact", contact_path, class:"nav-link" %>
+      </div>
+      <div class="col-md-6 text-right">
+        <%= link_to "Help", help_path, class:"nav-link" %>
+      </div>
+    </div>
+  </div>
 </footer>

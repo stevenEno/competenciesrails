@@ -57,15 +57,14 @@ gem 'faraday', '~> 2.6'
 
 gem 'jquery-rails'
 
-# gem 'bootstrap', '~> 5.2.3'
+gem 'bootstrap', '~> 5.2.3'
 
 # gem 'slack-ruby-client', '~> 2.0'
 
 # Use Sass to process CSS
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'sassc-rails', '>= 2.1.2'
-
-gem 'autoprefixer-rails', '~> 10.4', '>= 10.4.7.0'
+# gem 'bootstrap-sass', '~> 3.4.1'
+# gem 'sassc-rails', '>= 2.1.2'
+# gem 'autoprefixer-rails', '~> 10.4', '>= 10.4.7.0'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"

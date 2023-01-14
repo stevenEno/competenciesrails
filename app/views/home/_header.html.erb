@@ -28,11 +28,18 @@
               Account
             </a>
             <ul class="dropdown-menu">
-              <% if current_user.try(:user_type) == "teacher" %>
+              <% if current_user.try(:user_type) == "admin" %>
+                <li><%= link_to "Admin Dashboard", home_index_path, class:"dropdown-item" %></li>
+                <li><%= link_to "User Management", help_path, class:"dropdown-item" %></li>
+              <% elsif current_user.try(:user_type) == "teacher" %>
                 <li><%= link_to "Professional Relationships", home_index_path, class:"dropdown-item" %></li>
-                <li><%= link_to "DVS Celebrations", help_path, class:"dropdown-item" %></li>
+                <li><%= link_to "Project Builder", help_path, class:"dropdown-item" %></li>
+                <li><%= link_to "Student Portfolios", help_path, class:"dropdown-item" %></li>
+              <% elsif current_user.try(:user_type) == "student" %>
+                <li><%= link_to "Current Projects", home_index_path, class:"dropdown-item" %></li>
+                <li><%= link_to "Portfolio", help_path, class:"dropdown-item" %></li>
               <% else %>
-                <li><a class="dropdown-item" href="#">Portfolio</a></li>
+                <li><a class="dropdown-item" href="#">Explore</a></li>
               <% end %>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %></li>

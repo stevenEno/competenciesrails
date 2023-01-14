@@ -1,4 +1,6 @@
 class ProfessionalsController < ApplicationController
+  include Pundit
+
   before_action :set_professional, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -46,6 +48,7 @@ class ProfessionalsController < ApplicationController
 
   # POST /professionals or /professionals.json
   def create
+    authorize Professional, :create?
     @professional = Professional.new(professional_params)
 
     respond_to do |format|
@@ -74,10 +77,12 @@ class ProfessionalsController < ApplicationController
 
   # DELETE /professionals/1 or /professionals/1.json
   def destroy
+    @professional = Professional.find(params[:id])
+    authorize @professional, :destroy?
     @professional.destroy
 
     respond_to do |format|
-      format.html { redirect_to professionals_url, notice: "Professional was successfully destroyed." }
+      format.html { redirect_to professionals_url, notice: "Professional was successfully deleted." }
       format.json { head :no_content }
     end
   end

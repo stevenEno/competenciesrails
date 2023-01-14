@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :professionals
+  devise_for :students
+  devise_for :teachers
+  devise_for :admins
   resources :admins
   resources :teachers
   resources :students
@@ -7,6 +11,7 @@ Rails.application.routes.draw do
   resources :portfolios
   resources :projects
   devise_for :users, controllers: { registrations: "registrations" }
+  #devise_for :admins, controllers: { sessions: 'admins/sessions' }
   resources :competencies
 
   #root 'home#index'

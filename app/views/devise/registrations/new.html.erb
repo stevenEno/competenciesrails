@@ -18,19 +18,25 @@
       <%= f.radio_button :user_type, "professional", class: "btn-check", id: "professional", autocomplete: "off" %>
       <label class="btn btn-outline-primary" for="professional">Professional</label>
 
-      <%= f.radio_button :user_type, "school_lead", class: "btn-check", id: "school_lead", autocomplete: "off" %>
-      <label class="btn btn-outline-primary" for="school_lead">School Leader</label>
-    </div>
+      <%= f.radio_button :user_type, "admin", class: "btn-check", id: "admin", autocomplete: "off" %>
+      <label class="btn btn-outline-primary" for="admin">School Leader</label>
+    </div><br><br>
 
     <div class="field form-group">
-      <% f.label :name %><br />
+      <% f.label :name %>
       <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control", placeholder: "User Full Name" %>
       <br />
     </div>
 
     <div class="field form-group">
-      <% f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "name@email.com" %>
+      <% f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "User Email (ex/ name@email.com)" %>
+      <br />
+    </div>
+
+    <div class="field form-group">
+      <% f.label :school %>
+      <%= f.text_field :school, autofocus: true, autocomplete: "school", class:"form-control", placeholder: "User School (ex/ Da Vinci Connect)" %>
       <br />
     </div>
 

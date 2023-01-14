@@ -1,5 +1,8 @@
 class InternshipsController < ApplicationController
+  include Pundit
+  
   before_action :set_internship, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /internships or /internships.json
   def index

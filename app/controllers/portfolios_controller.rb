@@ -1,5 +1,8 @@
 class PortfoliosController < ApplicationController
+  include Pundit
+  
   before_action :set_portfolio, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /portfolios or /portfolios.json
   def index
