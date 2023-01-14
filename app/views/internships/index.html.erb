@@ -26,6 +26,6 @@
   </tbody>
 </table>
 
-<% if user_signed_in? %>
+<% if policy(:Internship).create? %>
   <%= link_to "New Internship", new_internship_path, class:"btn btn-success" %>
 <% end %>

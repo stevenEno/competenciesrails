@@ -19,4 +19,7 @@
   </div>
 <% end %>
 
-<%= link_to "New portfolio", new_portfolio_path %>
+
+<% if policy(:Portfolio).create? %>
+  <%= link_to "New Progress Post", new_portfolio_path, class:"btn btn-success" %>
+<% end %>

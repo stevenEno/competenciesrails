@@ -1,5 +1,5 @@
 class ProfessionalsController < ApplicationController
-  include Pundit
+  include Pundit::Authorization
 
   before_action :set_professional, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]

@@ -1,24 +1,34 @@
-<h1>Project Leo</h1>
+<% if current_user.try(:user_type) == "admin" %>
+    <h1>Welcome Admin!</h1>
+<% elsif current_user.try(:user_type) == "teacher" %>
+    <h1>Welcome Teacher!</h1>
+<% elsif current_user.try(:user_type) == "student" %>
+    <h1>Welcome Student!</h1>
+<% end %>
 
-<h2>The Humility Dance of Teaching</h2>
-<p>Teaching is an ever growing and endless list of activities. No matter what school you are at, there are always old traditions to carry on and new initiatives to implement. The best schools clearly communicate how to prioritize everything that goes into building meaningful experiences for students. The list can be overwhelming to both new and veteran teachers. Here is a sample list of daily activities from my second year of teaching:</p>
-<ul>
-    <li><p>Prep for classes (Earth Science, AP Physics, Introduction to Engineering Design, Principles of Engineering)</p></li>
-    <li><p>Organize science classroom for Earth Science and AP Physics</p></li>
-    <li><p>Organize engineering lab for engineering classes</p></li>
-    <li><p>Successfully teach four preps in two different buildings with over 200 students while tracking the needs of every student</p></li>
-    <li><p>Grade student work and adjust upcoming lesson plans as necessary to support as many students as possible</p></li>
-    <li><p>Setup data gathering for BTSA</p></li>
-    <li><p>Finish classwork to finalize my credential</p></li>
-    <li><p>Manage FIRST Robotics team activities</p></li>
-    <li><p>Map classes to new NGSS and Common Core Standards</p></li>
-    <li><p>Work with science department to create new pathways based on NGSS</p></li>
-    <li><p>Work with math department to implement new mastery-based grading and teaching through CMAST</p></li>
-    <li><p>Transition to coaching football as special team’s coordinator, defensive backs, and wide receiver’s coach</p></li>
-    <li><p>Leadership meeting to prepare for WASC visit</p></li>
-</ul>
-<p>This list doesn’t include the many small things that come up with students throughout the learning process. It is really amazing that teachers can handle so many threads at once and continue to give students great learning experiences. Getting pulled in so many directions isn’t healthy for anyone and reduces the quality of the work. An interesting feature of my second year of teaching was that it was during the transition to Common Core and NGSS, which meant our students didn’t take the state exams and there wasn’t much data to let us know how our students were doing. Very similar to the last couple of years of minimal data stemming from Covid.</p>
-<p>It is so easy to get lost in all of the doing that happens in education. In all of my work during the first decade of teaching I thought it was helpful to solve problems by creating more work for teachers. Convincing colleagues to try new grading frameworks, new pedagogy, or even a new learning system that I concocted felt like the most helpful thing I could do. I have realized that adding anything onto a teacher’s plate has a low probability of implementation. We have to take something off the massive to-do list if we want to influence the student experience.</p>
+<h1><a href = "https://projectleo.substack.com/p/project-leo">Project Leo</a></h1>
+
+<p>Welcome to the Beta Release of our project inspiration and ideation platform. Our goal is to make it easier for teachers to create authentic projects
+ and celebrate students building products, ideas, and their mastery. This is one of the many initiatives from The Da Vinci Institute. The Project Leo platform 
+ was built after observing the amazing educators that build the Da Vinci Schools network over the last 15 years and identifying two key insights about
+ teaching and learning.</p>
+
+<br>
+<h4><a href = "https://projectleo.substack.com/p/the-two-tensions-in-teaching">The Two Dances of Teaching</a></h2><br>
+<h4>Building Flywheel</h2><br><br>
+
+<p>While you are exploring please send all feedback and issues to <b>Steven Eno - seno@davincischools.org</b></p><br><br>
+
+<h2>The Da Vinci Institute for Professional Learning</h2>
+<p><b>The purpose of the Da Vinci Institute for Professional Learning is to help educators prepare students to lead, innovate, and thrive in the modern world.</b><br> 
+We do this by creating authentic professional learning experiences that strengthen connections between educators across the Da Vinci Schools and its partners, 
+focusing specifically on the following four areas:</p>
+<ol>
+    <li><b>Organizational Connectedness</b> - facilitating access to the knowledge and experience of colleagues within the Da Vinci organization & network</li>
+    <li><b>Professional Learning</b> - growing instructional and leadership capacity within the Da Vinci organization</li>
+    <li><b>Connecting Education to Employment</b> - growing instructional and leadership capacity within the Da Vinci organization</li>
+    <li><b>Network Development</b> - growing instructional and leadership capacity within the Da Vinci organization</li>
+</ol>
 
 
-<h2>Building Flywheel</h2>
+
