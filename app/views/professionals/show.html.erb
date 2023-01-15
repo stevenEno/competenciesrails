@@ -3,7 +3,10 @@
 <%= render @professional %>
 
 <div>
-  <%= link_to "Connect with this professional", professional_connect_email_path(@professional),  method: :post, class:"btn btn-info" %>
+  <% if @professional.is_currently_available && policy(@professional).show? %>
+    <%= link_to "Connect with this professional", professional_connect_email_path(@professional),  method: :post, class:"btn btn-info" %>
+  <% end %>
+
   <% if policy(@professional).destroy? %>
     <%= link_to "Edit this professional", edit_professional_path(@professional),  class:"btn btn-secondary" %>
     <%= link_to "Delete", @professional, data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>

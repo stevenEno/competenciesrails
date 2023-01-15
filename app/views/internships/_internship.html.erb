@@ -1,41 +1,27 @@
 <div id="<%= dom_id internship %>">
-
-  <p>
-    <strong>Company:</strong>
-    <%= internship.company %>
-  </p>
-
-  <p>
-    <strong>Industry:</strong>
-    <%= internship.industry %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= internship.description %>
-  </p>
-
-  <p>
-    <strong>Start date:</strong>
-    <%= internship.start_date %>
-  </p>
-
-  <p>
-    <strong>End date:</strong>
-    <%= internship.end_date %>
-  </p>
-
-  <p>
-    <strong>Contact:</strong>
-    <%= internship.contact %>
-  </p>
+  <div class="card" style="width: 54rem;">
+    <% if !internship.avatar.attached? %>
+      <%= image_tag "dv-schools-logo.jpg", class: "card-img-top" %>
+    <% else %>
+      <%= image_tag internship.avatar, class: "card-img-top" %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title">Company: <%= internship.name %></h5>
+      <p class="card-text"><b>Industry: <%= internship.industry %></b></p>
+      <p class="card-text"><%= internship.description %></p>
+      <p class="card-text"><b>Details</b></p>
+      <p class="card-text">
+        <ul>
+          <li>Start Date: <%= internship.start_date %></li>
+          <li>End Date: <%= internship.end_date %></li>
+          <li>Contact: <%= internship.contact %></li>
+          <li>Application Due Date: <%= @internship.start_date %></li>
+        </ul>
+    </div>
+  </div>
 
   <p>
     <%= link_to "Apply Now", internship.application_link, class:"btn btn-success", target: :_blank %>
-  </p>
-
-  <p>
-    <%= image_tag(internship.avatar) if internship.avatar.attached? %>
   </p>
 
 </div>

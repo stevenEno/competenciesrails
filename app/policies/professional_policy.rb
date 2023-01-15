@@ -17,5 +17,9 @@ class ProfessionalPolicy < ApplicationPolicy
     def destroy?
         user && user.admin?
     end
+
+    def show?
+        user
+    end
 end
   

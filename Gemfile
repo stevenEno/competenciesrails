@@ -53,11 +53,15 @@ gem 'activestorage', '~> 7.0', '>= 7.0.4'
 
 gem 'aws-sdk-s3', '~> 1.117', '>= 1.117.1'
 
+gem 'aws-sdk-ses', '~> 1.49'
+
 gem 'faraday', '~> 2.6'
 
 gem 'jquery-rails'
 
 gem 'bootstrap', '~> 5.2.3'
+
+gem 'acts_as_votable', '~> 0.14.0'
 
 # gem 'slack-ruby-client', '~> 2.0'
 

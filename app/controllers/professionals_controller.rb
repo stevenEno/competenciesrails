@@ -11,6 +11,7 @@ class ProfessionalsController < ApplicationController
 
   # GET /professionals/1 or /professionals/1.json
   def show
+    @professional = Professional.find(params[:id])
   end
 
   # Email

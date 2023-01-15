@@ -3,8 +3,9 @@
 <%= render @internship %>
 
 <div>
-  <%= link_to "Edit this internship", edit_internship_path(@internship) %> |
-  <%= link_to "Back to internships", internships_path %>
-
-  <%= button_to "Destroy this internship", @internship, method: :delete %>
+  <%= link_to "Back to internships", internships_path, class:"btn btn-dark"  %>
+  <% if policy(@internship).destroy? %>
+    <%= link_to "Edit this internship", edit_internship_path(@internship), class:"btn btn-secondary" %>
+    <%= button_to "Delete this internship", @internship, data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <% end %>
 </div>
